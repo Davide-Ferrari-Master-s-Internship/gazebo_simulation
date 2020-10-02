@@ -19,6 +19,6 @@
     </include>
 
 	<!--	bridge launch file	-->
-    <include file="$(find robot_bridge)/launch/Bridge.launch"/>
+    <include file="$(find robot_bridge)/launch/prbt+mpo_bridge.launch"/>
 
 </launch>

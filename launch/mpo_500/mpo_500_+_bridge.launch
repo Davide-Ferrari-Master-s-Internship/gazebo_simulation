@@ -4,6 +4,6 @@
   <include file="$(find gazebo_simulation)/launch/mpo_500/mpo_500_gazebo.launch"/>
 
 	<!--	Robot Bridge launchfile	-->
-  <include file="$(find robot_bridge)/launch/Bridge.launch"/>
+  <include file="$(find robot_bridge)/launch/MPO_500/mpo_500_bridge.launch"/>
 
 </launch>
