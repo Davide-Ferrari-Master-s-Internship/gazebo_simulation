@@ -1,5 +1,7 @@
 <launch>
 	
+	<arg name="simulation" default="true"/>
+
   <!--  select gazebo simulation world  -->
   <arg name="empty_world" default="true"/>
   <arg name="aruco_world" default="false"/>
@@ -10,15 +12,17 @@
   <arg name="real_camera" default="false"/>
   
 	<!--	rossini gazebo launchfile	-->
-    <include file="$(find gazebo_simulation)/launch/rossini_platform/rossini_gazebo.launch">
-    	<arg name="empty_world" value="$(arg empty_world)"/>
-    	<arg name="aruco_world" value="$(arg aruco_world)"/>
-    	<arg name="IMA_world" value="$(arg IMA_world)"/>
-    	<arg name="spawn_camera" value="$(arg spawn_camera)"/>
-  		<arg name="real_camera" value="$(arg real_camera)"/>
-    </include>
+  <include file="$(find gazebo_simulation)/launch/rossini_platform/rossini_gazebo.launch">
+  	<arg name="empty_world" value="$(arg empty_world)"/>
+  	<arg name="aruco_world" value="$(arg aruco_world)"/>
+  	<arg name="IMA_world" value="$(arg IMA_world)"/>
+  	<arg name="spawn_camera" value="$(arg spawn_camera)"/>
+		<arg name="real_camera" value="$(arg real_camera)"/>
+  </include>
 
 	<!--	bridge launch file	-->
-    <include file="$(find robot_bridge)/launch/prbt+mpo_bridge.launch"/>
+  <include file="$(find robot_bridge)/launch/prbt+mpo_bridge.launch">
+		<arg name="simulation" value="$(arg simulation)"/>
+	</include>
 
 </launch>

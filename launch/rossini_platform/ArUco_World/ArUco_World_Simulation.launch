@@ -4,28 +4,28 @@
   <arg name="real_camera" default="false"/>
 	
 	<!--remap arm_controller topics-->
-	<remap unless="$(arg real_camera)" from="/arm_controller/command" to="/prbt/manipulator_joint_trajectory_controller/command"/>
-	<remap unless="$(arg real_camera)" from="/arm_controller/follow_joint_trajectory/cancel" to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/cancel"/>
-	<remap unless="$(arg real_camera)" from="/arm_controller/follow_joint_trajectory/feedback" to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/feedback"/>
-	<remap unless="$(arg real_camera)" from="/arm_controller/follow_joint_trajectory/goal" to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/goal"/>
-	<remap unless="$(arg real_camera)" from="/arm_controller/follow_joint_trajectory/result" to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/result"/>
-	<remap unless="$(arg real_camera)" from="/arm_controller/follow_joint_trajectory/status" to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/status"/>
-	<remap unless="$(arg real_camera)" from="/arm_controller/state" to="/prbt/manipulator_joint_trajectory_controller/state"/>
+  <remap from="/arm_controller/command"                           to="/prbt/manipulator_joint_trajectory_controller/command"/>
+  <remap from="/arm_controller/follow_joint_trajectory/cancel"    to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/cancel"/>
+  <remap from="/arm_controller/follow_joint_trajectory/feedback"  to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/feedback"/>
+  <remap from="/arm_controller/follow_joint_trajectory/goal"      to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/goal"/>
+  <remap from="/arm_controller/follow_joint_trajectory/result"    to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/result"/>
+  <remap from="/arm_controller/follow_joint_trajectory/status"    to="/prbt/manipulator_joint_trajectory_controller/follow_joint_trajectory/status"/>
+  <remap from="/arm_controller/state"                             to="/prbt/manipulator_joint_trajectory_controller/state"/>
 	
 	<!--remap virtual_camera topics-->
-	<remap unless="$(arg real_camera)" from="/virtual_camera/camera_info" to="/C920/camera_info"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw" to="/C920/image_raw"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressed" to="/C920/image_raw/compressed"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressed/parameter_descriptions" to="/C920/image_raw/compressed/parameter_descriptions"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressed/parameter_updates" to="/C920/image_raw/compressed/parameter_updates"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressedDepth" to="/C920/image_raw/compressedDepth"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressedDepth/parameter_descriptions" to="/C920/image_raw/compressedDepth/parameter_descriptions"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressedDepth/parameter_updates" to="/C920/image_raw/compressedDepth/parameter_updates"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/theora" to="/C920/image_raw/theora"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/theora/parameter_descriptions" to="/C920/image_raw/theora/parameter_descriptions"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/theora/parameter_updates" to="/C920/image_raw/theora/parameter_updates"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/parameter_descriptions" to="/C920/parameter_descriptions"/>
-	<remap unless="$(arg real_camera)" from="/virtual_camera/parameter_updates" to="/C920/parameter_updates"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/camera_info"                                       to="/C920/camera_info"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw"                                         to="/C920/image_raw"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressed"                              to="/C920/image_raw/compressed"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressed/parameter_descriptions"       to="/C920/image_raw/compressed/parameter_descriptions"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressed/parameter_updates"            to="/C920/image_raw/compressed/parameter_updates"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressedDepth"                         to="/C920/image_raw/compressedDepth"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressedDepth/parameter_descriptions"  to="/C920/image_raw/compressedDepth/parameter_descriptions"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/compressedDepth/parameter_updates"       to="/C920/image_raw/compressedDepth/parameter_updates"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/theora"                                  to="/C920/image_raw/theora"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/theora/parameter_descriptions"           to="/C920/image_raw/theora/parameter_descriptions"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/image_raw/theora/parameter_updates"                to="/C920/image_raw/theora/parameter_updates"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/parameter_descriptions"                            to="/C920/parameter_descriptions"/>
+	<remap unless="$(arg real_camera)" from="/virtual_camera/parameter_updates"                                 to="/C920/parameter_updates"/>
 	
   <!--should be configured in simulation.launch-->
   <arg name="world_name_global" default="$(find gazebo_simulation)/launch/rossini_platform/ArUco_World/ArUco_world.world"/>

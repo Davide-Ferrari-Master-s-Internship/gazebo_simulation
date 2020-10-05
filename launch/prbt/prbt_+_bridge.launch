@@ -1,9 +1,13 @@
 <launch>
 
+	<arg name="simulation" default="true"/>
+
 	<!--	prbt launchfile	-->
   <include file="$(find gazebo_simulation)/launch/prbt/prbt_gazebo.launch"/>
 
 	<!--	bridge launch file	-->
-  <include file="$(find robot_bridge)/launch/PRBT6/prbt_bridge.launch"/>
+  <include file="$(find robot_bridge)/launch/PRBT6/prbt_bridge.launch">
+		<arg name="simulation" value="$(arg simulation)"/>
+	</include>
 
 </launch>
